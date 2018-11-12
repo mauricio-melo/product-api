@@ -66,7 +66,7 @@ public class CompanyResourceTests extends AbstractTest {
         final long countBeforeSave = this.repository.count();
 
         CompanyDTO company = CompanyDTO.builder()
-                .cnpj(61109923000189L)
+                .cnpj(61100923000189L)
                 .build();
 
 
