@@ -11,14 +11,14 @@ services:
     MYSQL_ROOT_PASSWORD: "root"
     MYSQL_ALLOW_EMPTY_PASSWORD: "no"
   network_mode: "bridge"
- product-app:
+ app:
   build:
     context: .
     dockerfile: Dockerfile_local
   links:
    - mysql
   environment:
-    SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/product"
+    SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/m2m_product"
     FLYWAY_ENABLED: "false"
   ports:
    - 9402:9402
