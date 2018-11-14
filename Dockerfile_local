@@ -1,0 +1,15 @@
+FROM openjdk:8
+
+ADD build/libs/*.jar /product-app.jar
+RUN sh -c "chmod 777 /product-app.jar"
+
+ADD wait-for-it.sh /wait-for-it.sh
+RUN sh -c "chmod 777 /wait-for-it.sh"
+
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+EXPOSE 9401
+
+ENTRYPOINT [ "./wait-for-it.sh", "-t", "300", "mysql:3306", "--", "java", "-jar", "/product-app.jar" ]

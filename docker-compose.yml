@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+ mysql:
+  image: mysql:5.7
+  volumes:
+   - ./src/test/resources/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+   - ./src/test/resources/data.sql:/docker-entrypoint-initdb.d/2-data.sql
+  environment:
+    MYSQL_DATABASE: "product"
+    MYSQL_ROOT_PASSWORD: "root"
+    MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+  network_mode: "bridge"
+ product-app:
+  build:
+    context: .
+    dockerfile: Dockerfile_local
+  links:
+   - mysql
+  environment:
+    SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/product"
+    FLYWAY_ENABLED: "false"
+  ports:
+   - 9402:9402
+  depends_on:
+   - mysql
+  network_mode: "bridge"

@@ -29,6 +29,10 @@ ext {
 	flywayVersion = '5.0.7'
 }
 
+//configurations {
+//	compile.exclude module: 'spring-boot-starter-tomcat'
+//}
+
 dependencies {
 	compile("org.springframework.boot:spring-boot-starter-data-jpa")
 	compile('org.springframework.boot:spring-boot-starter-web')

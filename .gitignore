@@ -1,26 +1,162 @@
-.gradle
-/build/
-!gradle/wrapper/gradle-wrapper.jar
+# Created by https://www.gitignore.io
+*.log
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+### Java ###
+*.class
 
-### IntelliJ IDEA ###
-.idea
-*.iws
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+*.log.*
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+
+### Intellij ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+
 *.iml
+
+## Directory-based project format:
+.idea/
+# if you remove the above rule, at least ignore the following:
+
+# User-specific stuff:
+# .idea/workspace.xml
+# .idea/tasks.xml
+# .idea/dictionaries
+
+# Sensitive or high-churn files:
+# .idea/dataSources.ids
+# .idea/dataSources.xml
+# .idea/sqlDataSources.xml
+# .idea/dynamic.xml
+# .idea/uiDesigner.xml
+
+# Gradle:
+#.idea/gradle.xml
+#.idea/libraries
+build/
+
+
+#para o Jenkins !!!!
+#gradle/
+#gradle-app.setting
+!gradle-wrapper.jar
+
+# Mongo Explorer plugin:
+# .idea/mongoSettings.xml
+
+## File-based project format:
 *.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
 /out/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+
+
+### Eclipse ###
+*.pydevproject
+.metadata
+.gradle
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+# Eclipse Core
+.project
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# PDT-specific
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# TeXlipse plugin
+.texlipse
+
+
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+
+# ci docker
+!.ci/target/jenkins/data/jobs/*/config.xml
+!.ci/target/jenkins/data/plugins/
+!.ci/target/jenkins/data/.gitconfig
+!.ci/target/jenkins/data/jenkins.*
+!.ci/target/jenkins/data/hudson.*
+!.ci/target/jenkins/data/org.*
+!.ci/target/jenkins/data/plugins
+ci/target/jenkins/data/*
+
+
+ci/target/postgres
+ci/target/sonar
+
+!target/sonar/extensions/plugins
+
+
+# compressed
+*.tar.gz
+*.tar.bz2
+*.tar
+*.zip
+*.rar
+*.tar.xz
+
+# Reconf
+v4.properties
+v4.script
+v4.log
+
+#sonar
+.sonar/
+.sonar/*
+
+#logs
+logs/*
