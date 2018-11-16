@@ -7,7 +7,7 @@ services:
    - ./src/test/resources/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
    - ./src/test/resources/data.sql:/docker-entrypoint-initdb.d/2-data.sql
   environment:
-    MYSQL_DATABASE: "product"
+    MYSQL_DATABASE: "m2m_product"
     MYSQL_ROOT_PASSWORD: "root"
     MYSQL_ALLOW_EMPTY_PASSWORD: "no"
   network_mode: "bridge"
